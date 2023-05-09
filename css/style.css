@@ -47,3 +47,10 @@
     transition: 0.5s;
 }
 
+
+/**
+* Selected Options box
+**/
+.boxes {
+    border-radius: 20px;
+}

@@ -50,17 +50,50 @@
                 <hr class="description-underline" id="description-underline">
             </div>
 
-            <div class="d-flex px-4 mb-3 justify-content-center gap-5 align-items-center">
+            <div class="input-group d-flex px-4 mb-3 justify-content-center align-items-center">
                 <select class="form-select selection" aria-label="Default select example" id="selection">
                     <option value= "1" selected>Text</option>
                     <option value="2">Checkboxes</option>
                     <option value="3">Multiple choice</option>
                 </select>
+                <button class="btn btn-primary button" id="button" onclick="createBox()">Create</button>
             </div>
 
         </div>
 
-        <div class="bg-secondary">box 1</div>
+        <div class="bg-secondary-subtle d-flex flex-column gap-2" id="boxes-uwu">
+            <!-- Existing content -->
+            <!-- <div class="container px-4 py-3 boxes bg-light">
+                <input type="text" placeholder="Question" class="p-2" style="width: 100%;">
+                <br>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Default radio
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Default checked radio
+                    </label>
+                </div>
+
+                <br>
+                <button class="btn btn-danger delete-button" style="background-color: #dc3545; border-color: #dc3545; float: right;"
+                    onmouseover="this.style.backgroundColor='#C82333'; this.style.borderColor='#C82333';"
+                    onmouseout="this.style.backgroundColor='#dc3545'; this.style.borderColor='#dc3545';">
+                    Delete
+                </button>
+
+            </div>
+
+            <div class="d-flex flex-column container px-4 py-3 boxes bg-light">
+                <input type="text" placeholder="Question" class="p-2">
+            </div> -->
+        </div>
+
     </div>
 
 </body>
