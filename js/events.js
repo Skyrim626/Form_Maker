@@ -77,10 +77,101 @@ function createBox() {
     let selectedValue = Number.parseInt(selected.value);
 
     switch(selectedValue) {
+        
+        case 2:
+            appendCheckBox();
+            break;
+        
         case 3:
             appendRadio();
             break;
     }
+
+}
+
+function appendCheckBox() {
+
+    // Create a new container div
+    const container = document.createElement('div');
+    container.className = 'd-flex flex-column container px-4 py-3 boxes bg-light';
+
+    // Create a new container div
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Question';
+    input.className = 'p-2';
+    input.style.width = '100%';
+
+    // Add the input to the container
+    container.appendChild(input);
+
+    // Create a checkbox container
+    const checkContainer = document.createElement('div');
+    checkContainer.className = 'd-flex gap-1 flex-column mt-3'
+
+    // Create checkbox
+    const checkbox1 = createCheckBox('1', 'Hello There');
+    checkContainer.appendChild(checkbox1);
+
+    const checkbox2 = createCheckBox('2', 'General Kenobi');
+    checkContainer.appendChild(checkbox2);
+
+    const checkbox3 = createCheckBox('3', 'Anakin, my allegiance is to the republic the democracy!');
+    checkContainer.appendChild(checkbox3);
+
+    container.appendChild(checkContainer);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add("btn", "btn-danger", "delete-button", "mt-3");
+    deleteButton.style.backgroundColor = '#dc3545';
+    deleteButton.style.borderColor = '#dc3545';
+    deleteButton.style.float = 'right';
+    deleteButton.style.innerText = 'Delete';
+
+    deleteButton.addEventListener('mouseover', () => {
+        deleteButton.style.backgroundColor = '#C82333';
+        deleteButton.style.borderColor = '#C82333';
+    });
+
+    deleteButton.addEventListener('mouseout', () => {
+    deleteButton.style.backgroundColor = '#dc3545';
+    deleteButton.style.borderColor = '#dc3545';
+    });
+
+    /**
+     * Add an event listener in this button
+     */
+    deleteButton.addEventListener('click', () => {
+        deleteContainer(container);
+    });
+
+    container.appendChild(deleteButton);
+
+    // Append the new container div to the #boxes-uwu element
+    const boxesUwu = document.getElementById('boxes-uwu');
+    boxesUwu.appendChild(container);
+
+}
+
+/**
+ * A function that creates the checkbutton
+ * @param {string} value string representing the value for the checkbox
+ * @param {string} label string representing the label for the checkbox
+ */
+function createCheckBox(value, label) {
+
+    console.log(label);
+    const checkboxLabel = document.createElement('label');
+    const checkBox = document.createElement('input');
+
+    checkBox.type = 'checkbox';
+    checkBox.value = value;
+    
+    // Adding
+    checkboxLabel.appendChild(checkBox);
+    checkboxLabel.append('label');
+
+    return checkBox;
 
 }
 
