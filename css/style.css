@@ -5,10 +5,45 @@
 }
 
 .web-title {
-    font-size: 1.8em;
     letter-spacing: 4px;
 }
 
 .nav-link {
     font-weight: 100;
 }
+
+/** Form Area**/
+.title-form {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.header-line {
+    height: 15px;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.title-input {
+    width: 100%;
+    border: none;
+}
+
+.title-underline {
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.form-description {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    border: none;
+}
+
+.description-underline {
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
