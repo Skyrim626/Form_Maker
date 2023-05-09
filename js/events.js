@@ -107,17 +107,27 @@ function appendCheckBox() {
 
     // Create a checkbox container
     const checkContainer = document.createElement('div');
-    checkContainer.className = 'd-flex gap-1 flex-column mt-3'
+    checkContainer.className = 'd-flex flex-column mt-3'
+
+    //Create checkbox
+    const checkBox1 = createCheckBox('1', 'Hello There!');
+    const checkBox2 = createCheckBox('2', 'General Kenobi');
+    const checkBox3 = createCheckBox('3', 'Anakin, my allegiance is to the republic the democracy!');
+
+    // Adding checkbox
+    checkContainer.appendChild(checkBox1);
+    checkContainer.appendChild(checkBox2);
+    checkContainer.appendChild(checkBox3);
 
     // Create checkbox
-    const checkbox1 = createCheckBox('1', 'Hello There');
+    /* const checkbox1 = createCheckBox('1', 'Hello There');
     checkContainer.appendChild(checkbox1);
 
     const checkbox2 = createCheckBox('2', 'General Kenobi');
     checkContainer.appendChild(checkbox2);
 
     const checkbox3 = createCheckBox('3', 'Anakin, my allegiance is to the republic the democracy!');
-    checkContainer.appendChild(checkbox3);
+    checkContainer.appendChild(checkbox3); */
 
     container.appendChild(checkContainer);
 
@@ -126,7 +136,7 @@ function appendCheckBox() {
     deleteButton.style.backgroundColor = '#dc3545';
     deleteButton.style.borderColor = '#dc3545';
     deleteButton.style.float = 'right';
-    deleteButton.style.innerText = 'Delete';
+    deleteButton.innerText = 'Delete';
 
     deleteButton.addEventListener('mouseover', () => {
         deleteButton.style.backgroundColor = '#C82333';
@@ -160,18 +170,23 @@ function appendCheckBox() {
  */
 function createCheckBox(value, label) {
 
-    console.log(label);
     const checkboxLabel = document.createElement('label');
     const checkBox = document.createElement('input');
 
     checkBox.type = 'checkbox';
+    checkBox.className = 'me-2';
     checkBox.value = value;
+    checkboxLabel.innerText = label;
     
-    // Adding
-    checkboxLabel.appendChild(checkBox);
-    checkboxLabel.append(label);
+    //Create a div for this checkBox
 
-    return checkBox;
+    const checkForm = document.createElement('div');
+    checkForm.className = "form-check p-0";
+
+    checkForm.appendChild(checkBox)
+    checkForm.appendChild(checkboxLabel);
+
+    return checkForm;
 
 }
 
