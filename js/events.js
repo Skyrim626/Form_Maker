@@ -78,6 +78,10 @@ function createBox() {
 
     switch(selectedValue) {
         
+        case 1:
+            appendText();
+            break;
+
         case 2:
             appendCheckBox();
             break;
@@ -89,6 +93,65 @@ function createBox() {
 
 }
 
+/**
+ * A function that creates text
+ */
+function appendText() {
+
+    // Create a new container div
+    const container = document.createElement('div');
+    container.classList = 'd-flex flex-column container px-4 py-3 boxes bg-light';
+
+    // Create a new container div
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Question';
+    input.className = 'p-2';
+    input.style.width = '100%';
+
+    // Add textarea element
+    const textArea = document.createElement('textarea');
+    textArea.rows = '10';
+    textArea.cols = '30';
+    textArea.classList.add('mt-3', 'p-2');
+    textArea.placeholder = 'Your answer here...';
+
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add("btn", "btn-danger", "delete-button", "mt-3");
+    deleteButton.style.backgroundColor = '#dc3545';
+    deleteButton.style.borderColor = '#dc3545';
+    deleteButton.style.float = 'right';
+    deleteButton.innerText = 'Delete';
+
+    deleteButton.addEventListener('mouseover', () => {
+        deleteButton.style.backgroundColor = '#C82333';
+        deleteButton.style.borderColor = '#C82333';
+    });
+
+    deleteButton.addEventListener('mouseout', () => {
+    deleteButton.style.backgroundColor = '#dc3545';
+    deleteButton.style.borderColor = '#dc3545';
+    });
+
+    /**
+     * Add an event listener in this button
+     */
+    deleteButton.addEventListener('click', () => {
+        deleteContainer(container);
+    });
+
+    container.appendChild(input);
+    container.appendChild(textArea);
+    container.appendChild(deleteButton);
+
+    // Append the new container div to the #boxes-uwu element
+    const boxesUwu = document.getElementById('boxes-uwu');
+    boxesUwu.appendChild(container);
+
+}
+/**
+ * A function that creates a checkbox section
+ */
 function appendCheckBox() {
 
     // Create a new container div
@@ -251,10 +314,10 @@ function appendRadio() {
 }
 
 /**
- * 
+ * A function that creates the form-check radio buttons
  * @param {string} id 
  * @param {string} label 
- * @returns 
+ * @returns returns an object type that contains the radio container, radio button and its value
  */
 function createRadio(id, label) {
   const radio = document.createElement('input');
