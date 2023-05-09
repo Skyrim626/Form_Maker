@@ -169,7 +169,7 @@ function createCheckBox(value, label) {
     
     // Adding
     checkboxLabel.appendChild(checkBox);
-    checkboxLabel.append('label');
+    checkboxLabel.append(label);
 
     return checkBox;
 
